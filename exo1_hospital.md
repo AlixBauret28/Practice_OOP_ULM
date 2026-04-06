@@ -172,8 +172,6 @@ Payment "0..*" --> "1" Doctor : paid to
 HealthProblem "1" --> "0..*" Prescription : receives
 Doctor "1" --> "0..*" Prescription : creates
 
-HealthProblem --> ProblemStatus
-Payment --> PaymentStatus
 
 ```
 
