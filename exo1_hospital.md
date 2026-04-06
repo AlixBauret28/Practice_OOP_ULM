@@ -152,34 +152,30 @@ class PaymentStatus {
         FAILED
     }
 
+###inheritance
+
     User <|-- Patient
     User <|-- Doctor
     User <|-- Organizer
 
-    HealthProblem <|-- Patient
-    HealthProblem <|-- Organizer
-
-    Payment <|-- Patient
-    Payment <|-- Organizer
     Payment <|-- CashPayment
     Payment <|-- CheckPayment
     Payment <|-- CreditCardPayment
 
-    Doctor <|-- Payment
 
-    Prescription <|-- Doctor
-    Prescription <|-- HealthProblem
+Patient "1" --> "0..*" HealthProblem : submits
+Organizer "1" --> "0..*" HealthProblem : manages
 
-    
+Patient "1" --> "0..*" Payment : makes
+Organizer "1" --> "0..*" Payment : processes
+Payment "0..*" --> "1" Doctor : paid to
 
-    Patient "1" -- "0..*" HealthProblem : submits
-    HealthProblem "1" -- "0..1" Prescription : leads to
-    Doctor "1" -- "0..*" Prescription : creates
-    Prescription "1" -- "1" Payment : requires
-    Patient "1" -- "0..*" Payment : makes
-    Organizer "1" -- "0..*" HealthProblem : manages
-    Organizer "1" -- "0..*" Payment : forwards
-    Payment -- PaymentType : uses
+HealthProblem "1" --> "0..*" Prescription : receives
+Doctor "1" --> "0..*" Prescription : creates
+
+HealthProblem --> ProblemStatus
+Payment --> PaymentStatus
+
 ```
 
 ### Sequence Diagram: Patient submits problem, receives prescription, and pays
