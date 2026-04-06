@@ -39,7 +39,7 @@ classDiagram
         +updateSystem()
     }
 
-    Patient "1..*" -- "1" Organizer : submits problem to
+    Patient "1..*" -- "1" Organizer : contacts
     Organizer "1" -- "1..*" Doctor : consults
     Organizer "1" -- "1..*" Patient : sends prescription to
 ```
