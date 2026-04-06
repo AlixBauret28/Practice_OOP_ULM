@@ -94,20 +94,21 @@ classDiagram
 
 
     class HealthProblem {
-        -int id
-        -String description
-        -String status
-        -DateTime submittedAt
-        +submit()
+        -id: String
+        -description: String
+        -datePosted: String
+        -status: String
         +updateStatus()
+        +getDetails()
     }
 
     class Prescription {
-        -int id
-        -String content
-        -DateTime createdAt
-        +create()
-        +send()
+        -id: String
+        -diagnosis: String
+        -medication: String
+        -instructions: String
+        -dateIssued: Date
+        +getDetails()
     }
 
     class Payment {
