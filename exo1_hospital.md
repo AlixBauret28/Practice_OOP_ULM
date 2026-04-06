@@ -152,7 +152,6 @@ class PaymentStatus {
         FAILED
     }
 
-###inheritance
 
     User <|-- Patient
     User <|-- Doctor
