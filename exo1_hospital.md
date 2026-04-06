@@ -63,31 +63,35 @@ classDiagram
         +updateProfile()
     }
 
-    class Patient {
-        -String email
-        -String phone
-        +postProblem()
-        +payPrescription()
-        +viewPrescription()
-    }
-
     class Doctor {
-        -String specialty
-        -String licenseNumber
-        +reviewProblem()
-        +createPrescription()
-        +receivePayment()
+        -specialty: String
+        -licenseNumber: String
+        +viewProblem()
+        +prescribeSolution()
+        +viewPatientHistory()
     }
 
     class Organizer {
-        -String role
+        -role: String
         +readProblem()
-        +consultDoctor()
+        +forwardToDoctor()
         +sendPrescription()
-        +forwardPayment()
-        +maintainDatabase()
-        +issueMemberCredentials()
+        +collectFee()
+        +payDoctor()
+        +createMember()
+        +updateDatabase()
+        +issueCredentials()
     }
+
+    class Patient {
+        -address: String
+        -phone: String
+        +postProblem()
+        +viewPrescription()
+        +makePayment()
+        +viewHistory()
+    }
+
 
     class HealthProblem {
         -int id
