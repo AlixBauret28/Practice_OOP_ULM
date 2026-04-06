@@ -96,8 +96,8 @@ classDiagram
     class HealthProblem {
         -id: String
         -description: String
-        -datePosted: String
-        -status: String
+        -datePosted: Date
+        -status: ProblemStatus
         +updateStatus()
         +getDetails()
     }
@@ -112,11 +112,12 @@ classDiagram
     }
 
     class Payment {
-        -int id
-        -float amount
-        -DateTime paidAt
-        -PaymentType type
+        -id: String
+        -amount: Double
+        -date: date
+        -status: PaymentStatus()
         +process()
+        +getReceipt()
     }
 
     class PaymentType {
