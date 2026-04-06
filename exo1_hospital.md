@@ -156,6 +156,22 @@ class PaymentStatus {
     User <|-- Doctor
     User <|-- Organizer
 
+    HealthProblem <|-- Patient
+    HealthProblem <|-- Organizer
+
+    Payment <|-- Patient
+    Payment <|-- Organizer
+    Payment <|-- CashPayment
+    Payment <|-- CheckPayment
+    Payment <|-- CreditCardPayment
+
+    Doctor <|-- Payment
+
+    Prescription <|-- Doctor
+    Prescription <|-- HealthProblem
+
+    
+
     Patient "1" -- "0..*" HealthProblem : submits
     HealthProblem "1" -- "0..1" Prescription : leads to
     Doctor "1" -- "0..*" Prescription : creates
