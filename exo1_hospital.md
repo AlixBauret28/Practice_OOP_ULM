@@ -6,10 +6,11 @@
 ```mermaid
 classDiagram
     class Patient {
-        -int id
-        -String name
-        -String password
-        -String email
+        -id: String
+        -name: String
+        -email: String
+        -password: String
+        +login()
         +postProblem()
         +payPrescription()
         +viewPrescription()
