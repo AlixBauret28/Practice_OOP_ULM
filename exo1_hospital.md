@@ -40,8 +40,8 @@ classDiagram
     }
 
     Patient "1..*" -- "1" Organizer : contacts
-    Organizer "1" -- "1..*" Doctor : consults
-    Organizer "1" -- "1..*" Patient : sends prescription to
+    Organizer "1" -- "1..*" Doctor : advises
+    Patient "1..*" -- "0..*" Patient : consult via organizer
 ```
 
 ---
