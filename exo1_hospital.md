@@ -41,7 +41,7 @@ classDiagram
 
     Patient "1..*" -- "1" Organizer : contacts
     Organizer "1" -- "1..*" Doctor : advises
-    Patient "1..*" -- "0..*" Patient : consult via organizer
+    Patient "1..*" -- "0..*" Doctor : consult via organizer
 ```
 
 ---
