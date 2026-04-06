@@ -54,11 +54,13 @@ classDiagram
 classDiagram
     class User {
         <<abstract>>
-        -int id
-        -String name
-        -String password
+        -id: String
+        -name: String
+        -email: String
+        -password: String
         +login()
         +logout()
+        +updateProfile()
     }
 
     class Patient {
