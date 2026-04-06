@@ -138,6 +138,21 @@ classDiagram
         +validatecard()
     }
 
+class ProblemStatus {
+        <<enumeration>>
+        PENDING
+        IN_REVIEW
+        RESOLVED
+        CLOSED
+    }
+
+class PaymentStatus {
+        <<enumeration>>
+        PENDING
+        COMPLETEED
+        FAILED
+    }
+
     User <|-- Patient
     User <|-- Doctor
     User <|-- Organizer
