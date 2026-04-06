@@ -92,7 +92,6 @@ classDiagram
         +viewHistory()
     }
 
-
     class HealthProblem {
         -id: String
         -description: String
