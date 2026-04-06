@@ -17,26 +17,26 @@ classDiagram
     }
 
     class Doctor {
-        -int id
-        -String name
-        -String password
-        -String specialty
-        +reviewProblem()
-        +createPrescription()
-        +receivePayment()
+        -id: String
+        -name: String
+        -specialty: String
+        -password: String
+        +login()
+        +viewProblem()
+        +prescribeSolution()
     }
 
     class Organizer {
-        -int id
-        -String name
-        -String password
-        -String role
+        -id: String
+        -name: String
+        -password: String
+        +login()
         +readProblem()
-        +consultDoctor()
         +sendPrescription()
-        +forwardPayment()
-        +maintainDatabase()
-        +issueMemberCredentials()
+        +collectFee()
+        +payDoctor()
+        +createMember()
+        +updateSystem()
     }
 
     Patient "1..*" -- "1" Organizer : submits problem to
