@@ -120,11 +120,22 @@ classDiagram
         +getReceipt()
     }
 
-    class PaymentType {
-        <<enumeration>>
-        CHECK
-        CASH
-        CREDIT_CARD
+    class CashPayment {
+        -receivedBy: String
+        +process()
+    }
+
+    class CheckPayment {
+        -checkNumber: String
+        -bankName: String
+        +process()
+    }
+
+    class CreditCardPayment {
+        -cardNumber: String
+        -ExpiryDate: String
+        +process()
+        +validatecard()
     }
 
     User <|-- Patient
